@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;B - Broadway</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;B - Broadway</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="b1.in">Easy input data set - B1</a></li>
+<li><a href="b2.in">Difficult input data set - B2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   The Manhattan in the New York City has really a nice topology. So nice, it is often idealized to a rectangular
+grid. If you want to go from corner <span 
+class="cmmi-10">A </span>= (<span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">y</span></sub>) to corner <span 
+class="cmmi-10">B </span>= (<span 
+class="cmmi-10">B</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,B</span><sub><span 
+class="cmmi-7">y</span></sub>), the shortest way has length
+<span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">x</span></sub> <span 
+class="cmsy-10">&minus; </span><span 
+class="cmmi-10">B</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmsy-10">| </span>+ <span 
+class="cmsy-10">|</span><span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">y</span></sub> <span 
+class="cmsy-10">&minus; </span><span 
+class="cmmi-10">B</span><sub><span 
+class="cmmi-7">y</span></sub><span 
+class="cmsy-10">|</span>. Or so they told you in school.
+<!--l. 11--><p class="indent" >   The truth is, the correct definition of a Manhattan metric has to involve the Broadway &#8211; a road that leads
+across the neatly aligned system of streets and avenues. In this problem we finally correct this horrible mistake
+made by the mathematical community.
+<!--l. 16--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 18--><p class="indent" >   Given the two corners <span 
+class="cmmi-10">A </span>= (<span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">y</span></sub>)<span 
+class="cmmi-10">,B </span>= (<span 
+class="cmmi-10">B</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,B</span><sub><span 
+class="cmmi-7">y</span></sub>) and three rational numbers <span 
+class="cmmi-10">P</span>, <span 
+class="cmmi-10">Q</span>, <span 
+class="cmmi-10">R </span>that
+describe the Broadway, your task is to find the length of the shortest path between points <span 
+class="cmmi-10">A </span>and
+<span 
+class="cmmi-10">B</span>.
+<!--l. 23--><p class="indent" >   The road network consists of the following roads:
+     <ul class="itemize1">
+     <li class="itemize">For each integer <span 
+class="cmmi-10">Z</span>, there is an avenue described by the equation <span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">Z</span>.
+     </li>
+     <li class="itemize">For each integer <span 
+class="cmmi-10">Z</span>, there is a street described by the equation <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">Z</span>.
+     </li>
+     <li class="itemize">The Broadway is described by the equation <span 
+class="cmmi-10">Px </span>+ <span 
+class="cmmi-10">Qy </span>= <span 
+class="cmmi-10">R</span>.</li></ul>
+<!--l. 30--><p class="indent" >   When moving from <span 
+class="cmmi-10">A </span>to <span 
+class="cmmi-10">B</span>, we can only move along the roads and change roads at intersections.
+<!--l. 32--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 34--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 37--><p class="indent" >   Each test case consists of one line containing seven numbers: <br 
+class="newline" />four integers <span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">y</span></sub><span 
+class="cmmi-10">,B</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,B</span><sub><span 
+class="cmmi-7">y</span></sub> specifying the points <span 
+class="cmmi-10">A </span>= (<span 
+class="cmmi-10">A</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,A</span><sub><span 
+class="cmmi-7">y</span></sub>) and <span 
+class="cmmi-10">B </span>= (<span 
+class="cmmi-10">B</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,B</span><sub><span 
+class="cmmi-7">y</span></sub>), <br 
+class="newline" />and three rational numbers <span 
+class="cmmi-10">P,Q,R </span>specifying the Broadway as explained above.
+<!--l. 43--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 45--><p class="indent" >   For each test case output a single line containing the length of the shortest path from <span 
+class="cmmi-10">A </span>to <span 
+class="cmmi-10">B</span>. Output a
+sufficient number of decimal places. Your output will be judged as correct if it has an absolute or relative error
+at most 10<sup><span 
+class="cmsy-7">&minus;</span><span 
+class="cmr-7">9</span></sup>.
+<!--l. 51--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+<!--l. 60--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;-1</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;1.0</span><span 
+class="cmtt-10">&#x00A0;1.0</span><span 
+class="cmtt-10">&#x00A0;1.0</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">-2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;-1</span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;1.0</span><span 
+class="cmtt-10">&#x00A0;-0.1</span><span 
+class="cmtt-10">&#x00A0;0.47</span>             </div>
+                                                                                       
+
+                                                                                       
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">3.414213562373</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">10</span>                                    </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

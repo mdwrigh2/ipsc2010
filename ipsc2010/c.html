@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;C - Cells</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;C - Cells</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="c1.in">Easy input data set - C1</a></li>
+<li><a href="c2.in">Difficult input data set - C2</a></li>
+</ul>
+<!--l. 4--><p class="indent" >   Tim loves spreadsheets. Everything he does on a computer, he does in a spreadsheet. Track
+his expenses? Create a spreadsheet! Decide which car to buy? Create a spreadsheet to compare
+them! Make an inventory of his games? Create a spreadsheet! Decide which girl he loves most?
+&hellip;
+<!--l. 9--><p class="indent" >   Unfortunately his spreadsheet software just crashed and he needs some of the data right now and does not
+have the time to install a competing office suit.
+<!--l. 12--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 14--><p class="indent" >   Given the formulas used in the cells of a spreadsheet, calculate the values of all the cells.
+<!--l. 16--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 18--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 21--><p class="indent" >   Each test case starts a single number <span 
+class="cmmi-10">N </span>giving the number of expression. Each of the following <span 
+class="cmmi-10">N </span>lines
+contains a single cell formula of the form &#8220;<span 
+class="cmtt-10">CELL = EXPRESSION</span>&#8221;, where <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">CELL</span></span></span> is the name of the cell and
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">EXPRESSION</span></span></span> is a mathematical expression consisting of cell names and the operators <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">+</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-</span></span></span>, <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">*</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">/</span></span></span>. A cell name is
+a non-empty sequence of letters followed by a positive integer.
+<!--l. 28--><p class="indent" >   Each test case is correct: there are no cycles, and all cells referenced in expressions have definitions.
+<!--l. 31--><p class="noindent" ><span 
+class="cmssbx-10">Evaluating expressions</span>
+<!--l. 33--><p class="indent" >   When evaluating an expression, usual priorities apply: first we evaluate all <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">*</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">/</span></span></span> (left to right), and only
+then all <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">+</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">-</span></span></span> (again, left to right).
+<!--l. 37--><p class="indent" >   You may assume that the expressions are such that when evaluating the expression in correct order, the
+result and also all intermediate values will fit into 32-bit signed integer variables.
+<!--l. 41--><p class="indent" >   The operator <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">/</span></span></span> represents integer division which is always rounded <span 
+class="cmbx-10">down</span>. The dividend will always be
+non-negative and the divisor will always be positive.
+<!--l. 44--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 46--><p class="indent" >   For each test case output the calculated values of cells, one per line, in the form &#8220;<span 
+class="cmtt-10">CELL = VALUE</span>&#8221;. The rows
+in the output should be ordered alphabetically. (To compare two rows, take a look at the first character where
+they differ. The one with a smaller ASCII value goes first.)
+<!--l. 50--><p class="indent" >   Optionally, output a blank line between test cases.
+<!--l. 52--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+                                                                                       
+
+                                                                                       
+<!--l. 66--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">A47</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;ZZ22</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">ZZ22</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">A9</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;13</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;A47</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;ZZ22</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">A1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;/</span><span 
+class="cmtt-10">&#x00A0;7</span><span 
+class="cmtt-10">&#x00A0;+</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;/</span><span 
+class="cmtt-10">&#x00A0;7</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">B2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;*</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;/</span><span 
+class="cmtt-10">&#x00A0;7</span>                        </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">A47</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;8</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">A9</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;37</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">ZZ22</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">A1</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">B2</span><span 
+class="cmtt-10">&#x00A0;=</span><span 
+class="cmtt-10">&#x00A0;1</span>                                </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

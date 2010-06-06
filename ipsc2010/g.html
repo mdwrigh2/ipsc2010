@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;G - Grid is good</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;G - Grid is good</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="g1.in">Easy input data set - G1</a></li>
+<li><a href="g2.in">Difficult input data set - G2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   Little Gordon enjoys nature and especially trees. He would like to sketch some of his most favourite
+ones. However, it seems that he doesn&#8217;t have enough grid paper &#8211; and that&#8217;s where your help is
+needed&hellip;
+<!--l. 9--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 11--><p class="indent" >   You are given a rooted binary tree and a number <span 
+class="cmmi-10">K</span>. Pick a rectangle on the grid with sides parallel to the
+coordinate axes. The chosen rectangle may contain at most <span 
+class="cmmi-10">K </span>grid points (including those on its perimeter).
+Draw the tree into the rectangle.
+<!--l. 16--><p class="indent" >   You have to place each node onto one of the grid points in your chosen rectangle. Different nodes must be
+placed onto different points. You then have to draw each of the edges. Each edge must be drawn as a polyline
+that lies entirely on the grid and does not exit the rectangle. No two edges may share a common point other
+than an endpoint they have in common.
+<div class="center" 
+>
+<!--l. 22--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><img 
+src="G0x.png" alt="PIC" class="graphics" ><!--tex4ht:graphics  
+name="G0x.png" src="G1.eps"  
+--></div>
+<!--l. 26--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 28--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 31--><p class="indent" >   Each test case consists of two lines. The first one contains the integer <span 
+class="cmmi-10">K</span>, the second one a string of
+parentheses that encodes the tree.
+<!--l. 42--><p class="indent" >   An empty tree is encoded as an empty string. A tree consisting of a root node and its two subtrees is denoted
+<span 
+class="cmtt-10">(LR)</span>, where <span 
+class="cmtt-10">L </span>and <span 
+class="cmtt-10">R </span>are the codes of those two subtrees. Note that a leaf has two empty subtrees, hence each
+leaf is denoted by the string <span 
+class="cmtt-10">()</span>.
+<!--l. 50--><p class="indent" >   The trees in the hard data set are identical to those in the easy data set. The data sets differ only in the
+amount of grid points you can use (the number <span 
+class="cmmi-10">K</span>).
+<!--l. 53--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 55--><p class="indent" >   For each test case output a single line with two integers <span 
+class="cmmi-10">r </span>and <span 
+class="cmmi-10">c</span>: the number of rows and the
+number of columns of grid points your chosen rectangle contains. Note that <span 
+class="cmmi-10">rc </span>must not exceed
+<span 
+class="cmmi-10">K</span>.
+<!--l. 59--><p class="indent" >   Afterwards, output 2<span 
+class="cmmi-10">r </span><span 
+class="cmsy-10">&minus; </span>1 rows, each containing 2<span 
+class="cmmi-10">c </span><span 
+class="cmsy-10">&minus; </span>1 characters: an ASCII art drawing of the tree. In
+the drawing, grid points correspond to characters whose both coordinates are even (indexed from
+0).
+<!--l. 63--><p class="indent" >   The root node should be marked as <span 
+class="cmtt-10">H</span>. For each other vertex: if it is the first child of its parent, label it <span 
+class="cmtt-10">L</span>,
+otherwise label it <span 
+class="cmtt-10">R</span>. The edges are drawn using <span 
+class="cmtt-10">-</span>, <span 
+class="cmtt-10">| </span>and <span 
+class="cmtt-10">+ </span>symbols (ASCII 45, 124, and 43; follow the example
+output). All the remaining characters should be <span 
+class="cmtt-10">. </span>(ASCII 46).
+<!--l. 70--><p class="indent" >   Any valid drawing will be accepted.
+<!--l. 72--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+                                                                                       
+
+                                                                                       
+<!--l. 83--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">4</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">(()())</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">36</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">((()(()))(()))</span>                        </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">H-R</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">|..</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">L..</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">4</span><span 
+class="cmtt-10">&#x00A0;5</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..+-+.+-R</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..|.|.|.|</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..R.L.+.L</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..|...|..</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..+.+-H..</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">..|.|....</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">L-L-+....</span>                             </div>
+</div>
+<!--l. 103--><p class="indent" >   <span 
+class="cmsl-10">In the second test case the chosen rectangle contains 20 grid points, which is less than the limit (which is</span>
+<span 
+class="cmsl-10">36).</span>
+<!--l. 108--><p class="indent" >   <span 
+class="cmsl-10">The second test case and its solution that corresponds to this ASCII art drawing are shown in the picture in</span>
+<span 
+class="cmsl-10">the problem statement.</span>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

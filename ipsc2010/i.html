@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;I - Inside job</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;I - Inside job</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="i1.in">Easy input data set - I1</a></li>
+<li><a href="i2.in">Difficult input data set - I2</a></li>
+</ul>
+<!--l. 13--><p class="indent" >   Jan is throwing darts into a polygon painted on the wall. His aim is really lousy. We will assume that the
+points he hits are uniformly distributed inside the polygon.
+<!--l. 17--><p class="indent" >   (Formally, let <span 
+class="cmmi-10">A </span>be the area of the polygon. Given any part of the polygon with area <span 
+class="cmmi-10">B</span>, the probability that
+Jan hits the given part is <span 
+class="cmmi-10">B&#x2215;A</span>.)
+<!--l. 21--><p class="indent" >   Each time Jan throws a dart, Monika measures the altitudes from the point where the dart landed onto all
+sides of the polygon. In other words, for each side of the polygon she measures the distance between the dart and
+the line that contains the given side. She then adds all the distances together and announces the
+result.
+<div class="center" >
+<!--l. 22--><p class="noindent" >
+<!--l. 23--><p class="noindent" ><img 
+src="I0x.png" alt="PIC" class="graphics" >
+<br class="newline" />
+<!--l. 9--><p class="indent" >   Monika computes the total length of the red lines in the image.
+</div>
+<!--l. 28--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 30--><p class="indent" >   Given is the polygon. Compute the expected value of the number Monika will calculate.
+<!--l. 33--><p class="indent" >   (If you do not know what an expected value is, imagine it as the average of very many
+attempts.)
+<!--l. 36--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 38--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 41--><p class="indent" >   Each test case starts with a line containing the number of vertices <span 
+class="cmmi-10">N</span>. Each of the next <span 
+class="cmmi-10">N </span>lines contains two
+integers: the coordinates of one point. You may assume that <span 
+class="cmmi-10">N </span><span 
+class="cmsy-10">&le; </span>500 and that all polygons are simple: the
+boundary of a polygon never touches or intersects itself.
+<!--l. 46--><p class="indent" >   The polygons in the easy input are special: They are convex, <span 
+class="cmmi-10">N </span>is even, and each pair of opposite sides is
+parallel.
+<!--l. 49--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 51--><p class="indent" >   For each test case output a single line with the expected value of the sum of all distances. The number must
+be printed with sufficiently many decimal places (we recommend 10 or more). Answers that have an absolute or
+relative error at most 10<sup><span 
+class="cmsy-7">&minus;</span><span 
+class="cmr-7">9</span></sup> will be accepted.
+<!--l. 56--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+                                                                                       
+
+                                                                                       
+<!--l. 71--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;4</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">4</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">6</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">7</span><span 
+class="cmtt-10">&#x00A0;3</span>                                   </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">3.133333333333</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2.017758261695</span>                        </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;A - Antisort</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;A - Antisort</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="a1.in">Easy input data set - A1</a></li>
+<li><a href="a2.in">Difficult input data set - A2</a></li>
+</ul>
+<!--l. 4--><p class="indent" >   Usually, in programming contests the problem statement tells you what to do. We find that
+boring.
+<!--l. 8--><p class="indent" >   In this task we do the opposite. We will tell you something you <span 
+class="cmbx-10">must not </span>do:
+   <div  
+class="centerline">                                           <span 
+class="cmti-10">You must not sort the given sequence.</span>                                        </div>
+<!--l. 15--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 16--><p class="indent" >   Given is a sequence <span 
+class="cmmi-10">S </span>of distinct integers. Rearrange the sequence in any way. The only condition is that the
+resulting sequence must not be sorted &#8211; neither in ascending nor in descending order.
+<!--l. 20--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 21--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 24--><p class="indent" >   Each test case consists of two lines. The first line contains a number <span 
+class="cmmi-10">N </span>(between 3 and 1000, inclusive) giving
+the length of the sequence. The second line contains <span 
+class="cmmi-10">N </span>space separated numbers that form the sequence.
+No two of these <span 
+class="cmmi-10">N </span>numbers are equal, and all of these numbers fit into a 32-bit signed integer
+variable.
+<!--l. 29--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 30--><p class="indent" >   The output format is the same as the input format, with one exception: The whitespaces may
+be arbitrary. Just make sure that every two tokens in the output are separated by at least one
+whitespace.
+<!--l. 33--><p class="indent" >   Each sequence in the output must contain the same numbers as the corresponding input sequence, and they
+must not be in sorted order.
+<!--l. 38--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+<!--l. 49--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">1</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;5</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">8</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;47</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;9</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;6</span>                      </div>
+</div>
+                                                                                       
+
+                                                                                       
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">8</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;47</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;9</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;6</span>                               </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>
