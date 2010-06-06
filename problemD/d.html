@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;D - Dragon Slayer</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;D - Dragon Slayer</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="d1.in">Easy input data set - D1</a></li>
+<li><a href="d2.in">Difficult input data set - D2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   You probably heard the story a thousand times: In some place far away, at some time long ago there was
+a kingdom ruled by a good king. This king had a daughter &#8211; a pretty princess. One day an evil
+dragon abducted the princess. A prince from some other kingdom decided to kill the dragon and save
+her. There was a fight, the dragon died, the princess was saved, and everybody lived happily ever
+after.
+<!--l. 14--><p class="indent" >   Of course, the story tellers have no idea how the fight with a dragon really looks like, so they make up a fake
+story where the prince uses a combination of brute force, expert sword handling and clever tricks to kill the
+dragon.
+<!--l. 18--><p class="indent" >   In reality, killing a dragon is a purely mathematical problem. The dragon has a variable (but always
+non-negative) number of heads. The only way to kill it is to reduce the number of its heads to
+zero.
+<!--l. 22--><p class="indent" >   The number of heads can only be changed by using a magic sword. Each magic sword is described by
+two parameters: <span 
+class="cmmi-10">c </span>and <span 
+class="cmmi-10">g</span>. Each time someone swings the magic sword, he must cut off <span 
+class="cmbx-10">exactly</span>
+<span 
+class="cmmi-10">c </span>heads. Afterwards, if the dragon is still alive (its number of heads is positive), it grows <span 
+class="cmmi-10">g </span>new
+heads.
+<!--l. 28--><p class="indent" >   The sword cannot be used if there are less that <span 
+class="cmmi-10">c </span>heads to cut. Note that the prince has a head. Thus he can
+kill a dragon with exactly <span 
+class="cmmi-10">c </span><span 
+class="cmsy-10">&minus; </span>1 heads, but dies when doing so.
+<!--l. 32--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 34--><p class="indent" >   Our prince has found <span 
+class="cmbx-10">two magic swords</span>: one with parameters <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">1</span></sub> and <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">1</span></sub>, the other with parameters <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">2</span></sub> and
+<span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">2</span></sub>. The dragon has <span 
+class="cmmi-10">N </span>heads.
+<!--l. 37--><p class="indent" >   Given the numbers <span 
+class="cmmi-10">N</span>, <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">1</span></sub>, <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">1</span></sub>, <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">2</span></sub>, compute whether the prince can kill the dragon, and if so, whether
+he can survive the fight.
+<!--l. 40--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 42--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 45--><p class="indent" >   Each test case consists of one line containing the numbers <span 
+class="cmmi-10">N</span>, <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">1</span></sub>, <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">1</span></sub>, <span 
+class="cmmi-10">c</span><sub><span 
+class="cmr-7">2</span></sub> and <span 
+class="cmmi-10">g</span><sub><span 
+class="cmr-7">2</span></sub>.
+<!--l. 47--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 49--><p class="indent" >   For each test case output a single line containing one word: &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">PRINCE</span></span></span>&#8221; if the prince can win the fight (i.e., kill
+the dragon and survive), &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">DRAW</span></span></span>&#8221; if he can kill the dragon but has to die in order to do so, or &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">DRAGON</span></span></span>&#8221; if the
+dragon cannot be killed.
+<!--l. 53--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+                                                                                       
+
+                                                                                       
+<!--l. 64--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">20</span><span 
+class="cmtt-10">&#x00A0;7</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;8</span><span 
+class="cmtt-10">&#x00A0;5</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">100</span><span 
+class="cmtt-10">&#x00A0;102</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;103</span><span 
+class="cmtt-10">&#x00A0;0</span>                       </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">PRINCE</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">DRAW</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">DRAGON</span>                                </div>
+<!--l. 71--><p class="noindent" >In the first case, the prince can kill the dragon e.g.
+by using the swords in the order first, first, second.
+<!--l. 76--><p class="noindent" >In the second test case the second sword has no
+effect. As soon as the prince uses the first sword,
+both he and the dragon die.
+<!--l. 81--><p class="noindent" >In the third test case the prince cannot use any of
+the two swords.</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

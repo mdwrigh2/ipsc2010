@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;J - Jimmy the Acting Teacher</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;J - Jimmy the Acting Teacher</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="j1.in">Easy input data set - J1</a></li>
+<li><a href="j2.in">Difficult input data set - J2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   Jimmy is an acting teacher. He wants to introduce a new acting exercise to his class. There are exactly <span 
+class="cmmi-10">N</span>
+men and <span 
+class="cmmi-10">N </span>women taking his course. There are <span 
+class="cmmi-10">N </span>tables in the room. Each table is assigned a dialogue for a
+man and woman. The dialogues are different at different tables. Jimmy wants all students to try every dialogue
+exactly once. He also wants every man to play with every woman, so that he can see which actors should play
+together in a play.
+<!--l. 12--><p class="indent" >   Jimmy wants to keep things as simple as possible. First, he took a black marker and labelled the tables
+from 1 to <span 
+class="cmmi-10">N</span>. Then he took a blue marker and a red marker and wrote a blue number and a red
+number onto each table. Whenever a couple finishes the dialogue, the man reads the blue number on
+their table and goes to the table with that number, and the woman does the same with the red
+number.
+<!--l. 19--><p class="indent" >   Each actor chooses one table at the beginning of the class and will start by playing the dialogue at the chosen
+table. Each dialogue takes 5 minutes. After the 5 minutes are over, all students move simultaneously according
+to the blue and red numbers. All movement happens in an instant.
+<!--l. 24--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 26--><p class="indent" >   Finding the right 2 numbers for each table seems to be a very difficult task. Please help Jimmy. For a given
+<span 
+class="cmmi-10">N</span>, find one way how the blue and red numbers may look like.
+<!--l. 30--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 32--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 35--><p class="indent" >   Each test case consists of a single line containing the integer <span 
+class="cmmi-10">N </span>denoting the size of the class.
+<!--l. 38--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 40--><p class="indent" >   For each test case output a single line with word &#8220;<span 
+class="cmtt-10">Impossible</span>&#8221; if it is impossible to find the right 2 numbers
+for every table. Otherwise output 2 lines. The first line will contain a space-separated list of blue numbers, the
+second line will contain a space-separated list of red numbers. (The <span 
+class="cmmi-10">i</span>-th number in each list is the one written on
+table <span 
+class="cmmi-10">i</span>.) Output a blank line between test cases.
+<!--l. 47--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+<!--l. 58--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span>                                     </div>
+</div>
+                                                                                       
+
+                                                                                       
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">Impossible</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;4</span>                             </div>
+</div>
+<!--l. 72--><p class="indent" >   <span 
+class="cmsl-10">In the first test case there is no solution: after the first dialogue both actors at table 1 must move to a</span>
+<span 
+class="cmsl-10">different table in order not to play the same dialogue twice. But then they will face each other</span>
+<span 
+class="cmsl-10">again.</span>
+<!--l. 78--><p class="indent" >   <span 
+class="cmsl-10">In the second test case in the first round we have pairs </span>(1<span 
+class="cmmi-10">,</span>1)<span 
+class="cmmi-10">,</span>(2<span 
+class="cmmi-10">,</span>2)<span 
+class="cmmi-10">,</span>(3<span 
+class="cmmi-10">,</span>3) <span 
+class="cmsl-10">playing together (assuming that we</span>
+<span 
+class="cmsl-10">numbered both men and women 1, 2, 3 according to their starting table). In the second round pairs</span>
+(3<span 
+class="cmmi-10">,</span>2)<span 
+class="cmmi-10">,</span>(1<span 
+class="cmmi-10">,</span>3)<span 
+class="cmmi-10">,</span>(2<span 
+class="cmmi-10">,</span>1) <span 
+class="cmsl-10">play together. Finally, in the third round pairs </span>(2<span 
+class="cmmi-10">,</span>3)<span 
+class="cmmi-10">,</span>(3<span 
+class="cmmi-10">,</span>1)<span 
+class="cmmi-10">,</span>(1<span 
+class="cmmi-10">,</span>2) <span 
+class="cmsl-10">play together. Note that</span>
+<span 
+class="cmsl-10">everyone played with all possible partners and visited all tables.</span>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

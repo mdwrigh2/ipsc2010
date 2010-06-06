@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;E - Eyjafjallaj&ouml;kull</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;E - Eyjafjallaj&ouml;kull</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="e1.in">Easy input data set - E1</a></li>
+<li><a href="e2.in">Difficult input data set - E2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   Sometimes it&#8217;s hard to see the forest, because all the trees get in your way. Other times, it&#8217;s hard to see the
+volcano, because of all the ash in the air.
+<!--l. 8--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 10--><p class="indent" >   The world is represented by a rectangle of <span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">&#x00D7;</span><span 
+class="cmmi-10">N </span>cells. There is exactly one volcano somewhere in the world.
+The volcano occupies one of the cells. Your task is to find this cell.
+<!--l. 14--><p class="indent" >   Note that there are two separate data sets. The easy data set and the hard data set are completely
+independent and use two different maps. You have to solve each of them separately.
+<!--l. 20--><p class="indent" >   In the beginning, there is no ash anywhere. Our volcano erupts in rounds that correspond to your submits,
+and there is a changing wind which then distributes the ash over the world.
+<!--l. 24--><p class="indent" >   In each your submit you can check <span 
+class="cmmi-10">K </span>locations of the map to see if there is currently any ash present or not.
+These probes are binary &#8211; it will report ash presence if and only if the cell contains at least one unit of
+ash.
+<!--l. 31--><p class="indent" >   Each round consists of the following steps, in order.
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">You submit a list of probes.
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">The volcano releases 100 units of new ash into the air at its location (no wind applied yet).
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">Your probes are evaluated.
+     </li>
+     <li 
+  class="enumerate" id="x1-9x4">A new wind is calculated and applied to the whole map. (In each round the current wind is the
+     same everywhere on the map.)</li></ol>
+<!--l. 40--><p class="indent" >   The answer you&#8217;ll receive for your submit will contain all probe results and a description of the wind that was
+generated in step 4.
+<!--l. 43--><p class="noindent" ><span 
+class="cmssbx-10">Wind model</span>
+<!--l. 45--><p class="indent" >   The wind is specified by a 5 <span 
+class="cmsy-10">&#x00D7; </span>5 matrix called the <span 
+class="cmti-10">wind matrix</span>. Rows and columns of a wind matrix are
+labeled from -2 to 2.
+<!--l. 48--><p class="indent" >   A wind matrix specifies how to distribute the ash from any given cell into its surroundings. In each wind
+matrix the numbers are non-negative integers that sum up to 100, and they should be interpreted as
+percentages.
+<!--l. 52--><p class="indent" >   Formally, suppose that there are <span 
+class="cmmi-10">a </span>units of ash in a given cell (<span 
+class="cmmi-10">x,y</span>) before the wind blows. Let <span 
+class="cmmi-10">W </span>be a wind
+matrix. After the wind described by <span 
+class="cmmi-10">W </span>blows, the ash from (<span 
+class="cmmi-10">x,y</span>) will be redistributed into cells (<span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">&prime;</span><span 
+class="cmmi-10">,y</span><span 
+class="cmsy-10">&prime;</span>) with
+<span 
+class="cmmi-10">x </span><span 
+class="cmsy-10">&minus; </span>2 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">x</span><span 
+class="cmsy-10">&prime;&le; </span><span 
+class="cmmi-10">x </span>+ 2 and <span 
+class="cmmi-10">y </span><span 
+class="cmsy-10">&minus; </span>2 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">y</span><span 
+class="cmsy-10">&prime;&le; </span><span 
+class="cmmi-10">y </span>+ 2. More precisely, the cell (<span 
+class="cmmi-10">x </span>+ <span 
+class="cmmi-10">d</span><sub><span 
+class="cmmi-7">x</span></sub><span 
+class="cmmi-10">,y </span>+ <span 
+class="cmmi-10">d</span><sub><span 
+class="cmmi-7">y</span></sub>) will receive
+<span 
+class="cmsy-10">&lfloor;</span><span 
+class="cmmi-10">a </span><span 
+class="cmsy-10">&sdot; </span><span 
+class="cmmi-10">W</span><sub><span 
+class="cmmi-7">d</span><sub><span 
+class="cmmi-5">x</span></sub><span 
+class="cmmi-7">,d</span><sub><span 
+class="cmmi-5">y</span></sub></sub><span 
+class="cmmi-10">&#x2215;</span>100<span 
+class="cmsy-10">&rfloor; </span>units of ash from this cell. Any ash that leaves the map boundary in this way is gone
+forever. Also note that (due to rounding) the total amount of ash the cells receive may be less than
+<span 
+class="cmmi-10">a</span>.
+                                                                                       
+
+                                                                                       
+<!--l. 62--><p class="indent" >   It is important to note that the ash from all cells is being redistributed at the same time. (The process
+resembles a blur operation in a graphics editor.)
+<!--l. 65--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 67--><p class="indent" >   The input file contains 3 integers: <span 
+class="cmmi-10">M</span>, <span 
+class="cmmi-10">N </span>and <span 
+class="cmmi-10">K</span>. The map size is <span 
+class="cmmi-10">M </span><span 
+class="cmsy-10">&#x00D7; </span><span 
+class="cmmi-10">N </span>cells. In each submit, you may
+specify up to <span 
+class="cmmi-10">K </span>probe locations.
+<!--l. 71--><p class="indent" >   The volcano will be placed in a cell such that in any direction there are at least two other cells before we
+reach the map boundary.
+<!--l. 74--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 76--><p class="indent" >   In each submit you can specify up to <span 
+class="cmmi-10">K </span>cell locations <span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">i</span></sub><span 
+class="cmmi-10">,y</span><sub><span 
+class="cmmi-7">i</span></sub> (0 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">x</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmmi-10">&#x003C; M</span>, 0 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">y</span><sub><span 
+class="cmmi-7">i</span></sub> <span 
+class="cmmi-10">&#x003C; N</span>). All values should be
+separated by whitespace. In case one of your probes matches the volcano location, the game ends and the data
+set is correctly solved.
+<!--l. 80--><p class="indent" >   Otherwise, you will receive a &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">WRONG</span><span 
+class="cmtt-10">&#x00A0;ANSWER</span></span></span>&#8221; message with the following information: <br 
+class="newline" />&#8211; the current round number, <br 
+class="newline" />&#8211; ash presence values for all your probes (0 = no ash present, 1 = some ash present), <br 
+class="newline" />&#8211; and a new wind matrix.
+<!--l. 85--><p class="noindent" ><span 
+class="cmssbx-10">Submission limit</span>
+<!--l. 87--><p class="indent" >   Please note that the submission limit for each data set is 10 submits, as is the case for any other
+task.
+<!--l. 89--><p class="indent" >   Be careful about the submissions you make. Try not to waste any, and always double-check whether the one
+you are about to send is correct.
+<!--l. 92--><p class="noindent" ><span 
+class="cmssbx-10">Example submission (in the middle of a game)</span>
+<!--l. 98--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">1</span><span 
+class="cmtt-10">&#x00A0;3</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">4</span><span 
+class="cmtt-10">&#x00A0;9</span>                                   </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">Round:</span><span 
+class="cmtt-10">&#x00A0;3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">Probe</span><span 
+class="cmtt-10">&#x00A0;[1,3]:</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">Probe</span><span 
+class="cmtt-10">&#x00A0;[4,9]:</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">Wind:</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;30</span><span 
+class="cmtt-10">&#x00A0;10</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;20</span><span 
+class="cmtt-10">&#x00A0;15</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;10</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span>                             </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

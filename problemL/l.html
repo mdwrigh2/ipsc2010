@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;L - Lovely stamps</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;L - Lovely stamps</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="l1.in">Easy input data set - L1</a></li>
+<li><a href="l2.in">Difficult input data set - L2</a></li>
+</ul>
+<!--l. 5--><p class="indent" >   Little Peter is collecting stamps. Recently, he went shopping with his mother Lucia and guess what: As they
+were going around the post office, he started to blackmail his mom, as only the little boys can. At the post
+office, they were selling <span 
+class="cmmi-10">N </span>different types of one-dollar stamps and <span 
+class="cmmi-10">M </span>different types of two-dollar
+stamps.
+<!--l. 13--><p class="indent" >   Peter got exactly <span 
+class="cmmi-10">K </span>dollars from his mom, and he wants to spend all of them on stamps. Note that he can
+buy more stamps of the same type. You may assume that the post office has an infinite stock of each type of
+stamp.
+<!--l. 18--><p class="indent" >   Now, Peter is wondering in how many ways he can buy the stamps.
+<!--l. 20--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 22--><p class="indent" >   Given are the integers <span 
+class="cmmi-10">N</span>, <span 
+class="cmmi-10">M</span>, <span 
+class="cmmi-10">K</span>, and a prime number <span 
+class="cmmi-10">P</span>.
+<!--l. 24--><p class="indent" >   Your task is to compute the value <span 
+class="cmmi-10">Z</span> mod <span 
+class="cmmi-10">P</span>, where <span 
+class="cmmi-10">Z </span>is the (possibly huge) number of ways in which Peter
+can spend all <span 
+class="cmmi-10">K </span>dollars on stamps.
+<!--l. 28--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 30--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 33--><p class="indent" >   Each test case consists of a single line containing the integers <span 
+class="cmmi-10">N</span>, <span 
+class="cmmi-10">M</span>, <span 
+class="cmmi-10">K</span>, and <span 
+class="cmmi-10">P</span>. <br 
+class="newline" />You may assume that 3 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">P </span><span 
+class="cmsy-10">&le; </span>1<span style="margin-left:0.3em" class="thinspace"></span>000<span style="margin-left:0.3em" class="thinspace"></span>000. <br 
+class="newline" />For the small input set, you may assume that 0 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">N,M </span><span 
+class="cmsy-10">&le; </span>1000 and 1 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">K </span><span 
+class="cmsy-10">&le; </span>1000. <br 
+class="newline" />For the large input set, you may assume 0 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">N,M </span><span 
+class="cmsy-10">&le; </span>300 and 1 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">K </span><span 
+class="cmsy-10">&le; </span>1<span style="margin-left:0.3em" class="thinspace"></span>000<span style="margin-left:0.3em" class="thinspace"></span>000<span style="margin-left:0.3em" class="thinspace"></span>000<span style="margin-left:0.3em" class="thinspace"></span>000 = 10<sup><span 
+class="cmr-7">12</span></sup>.
+<!--l. 50--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 52--><p class="indent" >   For each test case output a single line with a single integer: The number of different ways to buy stamps,
+modulo <span 
+class="cmmi-10">P</span>.
+<!--l. 55--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+<!--l. 66--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">3</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;10</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;47</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;47</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;10</span><span 
+class="cmtt-10">&#x00A0;47</span>                             </div>
+</div>
+                                                                                       
+
+                                                                                       
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">10</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">14</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">6</span>                                     </div>
+<!--l. 73--><p class="noindent" >In the first test case, we must buy one 2-dollar
+stamp and there are 10 types.
+</div>
+<!--l. 77--><p class="noindent" ><span 
+class="cmsl-10">In the second test case, we have these options: </span><br 
+class="newline" /><span 
+class="cmsl-10">&#8211; buy two 2-dollar stamps: 3 ways to do so </span><br 
+class="newline" /><span 
+class="cmsl-10">&#8211; buy a 2-dollar stamp and two 1-dollar stamps: </span>2 <span 
+class="cmsy-10">&#x00D7; </span>3 = 6 <span 
+class="cmsl-10">ways to do so </span><br 
+class="newline" /><span 
+class="cmsl-10">&#8211; buy four 1-dollar stamps: 5 ways to do so </span><br 
+class="newline" /><span 
+class="cmsl-10">Therefore the answer is </span>(3 + 6 + 5) mod 47 = 14 mod 47 = 14<span 
+class="cmsl-10">.</span>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

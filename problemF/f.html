@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;F - Flawed Code</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;F - Flawed Code</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li>This problem has no input</li>
+<li><a href="f.cc">Students' programs in C++</a></li><li><a href="f.pas">Students' programs in Pascal</a></li><li><a href="f.py">Students' programs in Python</a></li></ul>
+<!--l. 4--><p class="indent" >   Michael is teaching an algorithms class. In the last lecture he gave his students the following
+problem:
+<div class="center" 
+>
+<!--l. 7--><p class="noindent" >
+<div class="fbox"> <div class="minipage">Given are several cubes of various sizes. You can make towers out of the cubes by placing
+them one atop another, in any order. Your task is to find the <span 
+class="cmti-10">largest possible </span>height <span 
+class="cmmi-10">H</span>
+such that is is possible to build <span 
+class="cmti-10">two separate towers </span>of height <span 
+class="cmmi-10">H</span>.
+<!--l. 19--><p class="noindent" >For example, if the cube sizes are (8,6,3,3,3,2), then the solution is 11: <br 
+class="newline" />we can build one tower as 8+3, the other as 6+3+2, and a cube of size 3 remains unused.</div></div>
+</div>
+<!--l. 21--><p class="indent" >   This task proved to be too difficult for his students, so each of them just implemented some clever hack that
+sometimes worked and sometimes failed. More precisely:
+     <ul class="itemize1">
+     <li class="itemize">Alla implemented a brute force solution. She sorts the cubes in descending order. If there are more
+     than 10, she just takes the 10 largest cubes. Then she tries all possible ways how to build two towers
+     and finds the best one in which the towers are of equal height.
+     </li>
+     <li class="itemize">Bob finds and outputs the best solution that only leaves at most two cubes unused.
+     <!--l. 35--><p class="noindent" >To do so, he used dynamic programming to implement a function that takes a set of cubes and
+     checks whether it is possible to build two equal towers using <span 
+class="cmti-10">all of them</span>. He then calls this function
+     multiple times, each time with a different subset of the given set of cubes.
+     </li>
+     <li class="itemize">Chermi loves greedy algorithms. His program finds the largest <span 
+class="cmmi-10">X </span>for which his greedy algorithm
+     manages to build two towers of height <span 
+class="cmmi-10">X </span>each.
+     <!--l. 44--><p class="noindent" >His algorithm to build two towers of height <span 
+class="cmmi-10">X </span>is simple: He first sorts the cubes in descending
+     order, and then processes them one by one. Each time he checks whether he can add the cube to
+     the currently smaller tower without exceeding <span 
+class="cmmi-10">X</span>, and if he can, he does so.
+     </li>
+     <li class="itemize">Dominika&#8217;s solution is perhaps the most clever one. She used dynamic programming. For each <span 
+class="cmmi-10">H</span>
+     she computed the number of ways in which a tower of size <span 
+class="cmmi-10">H </span>can be assembled. The answer she
+     outputs is the largest <span 
+class="cmmi-10">X </span>such that the tower of height 2<span 
+class="cmmi-10">X </span>can be assembled, and the tower of height
+     <span 
+class="cmmi-10">X </span>can be assembled in at least two different ways.</li></ul>
+<!--l. 57--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 59--><p class="indent" >   You are given the four programs made by Michael&#8217;s students (for your convenience, each of them is
+implemented in several languages). Your goal is to help Michael show the students their errors by providing
+inputs for which the students&#8217; solutions fail.
+                                                                                       
+
+                                                                                       
+<!--l. 64--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 66--><p class="indent" >   The input file contains implementations of the four students&#8217; programs in C++, Pascal, and
+Python.
+<!--l. 68--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 70--><p class="indent" >   As the output for the <span 
+class="cmbx-10">easy </span>data set F1, output 4 lines, containing 2 valid test cases. Each test case
+consists of two lines. The first line contains the number <span 
+class="cmmi-10">N </span>of cubes (1 <span 
+class="cmsy-10">&le; </span><span 
+class="cmmi-10">N </span><span 
+class="cmsy-10">&le; </span>100). The second line
+contains <span 
+class="cmmi-10">N </span>space-separated integers &#8211; the cube sizes. The sum of all cube sizes must not exceed
+10<span style="margin-left:0.3em" class="thinspace"></span>000.
+<!--l. 76--><p class="indent" >   The submission will be judged as correct if it breaks at least three of our solutions. In other words, at most
+one of our four solutions can give the correct answer for both your test cases.
+<!--l. 82--><p class="indent" >   As the output for the <span 
+class="cmbx-10">hard </span>data set F2, output 2 lines containing a single valid test case.
+<!--l. 85--><p class="indent" >   The submission will be judged as correct if it breaks all four solutions. That is, none of the four solutions
+should give the correct answer for your test case.
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>

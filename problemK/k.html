@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;K - Klingon High Council Training</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;K - Klingon High Council Training</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li><a href="k1.in">Easy input data set - K1</a></li>
+<li><a href="k2.in">Difficult input data set - K2</a></li>
+</ul>
+<!--l. 4--><p class="indent" >   Tired of being seen as the endless supply of brute force for the United Federation of Planets, the Klingon
+High Council has decided to start a training program aimed on spaceship battle tactics. The main part of the
+program is a game that is played by two of the trainees.
+<!--l. 10--><p class="indent" >   The game is played using a fleet of <span 
+class="cmmi-10">N </span>spaceships. The space is divided into a cube grid of sectors. Each sector
+is uniquely identified by its three integer coordinates. Each sector may contain multiple spaceships. During the
+game the spaceships are traveling between sectors in order to reach a target planet that is located in the sector
+(0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>0). When all the ships reach this sector, the game is over and the player who finished the maneuver is
+decorated as the winner.
+<!--l. 21--><p class="indent" >   Each turn of the game looks as follows: The player whose turn it is must first <span 
+class="cmbx-10">contact </span>between 1 and <span 
+class="cmmi-10">K</span>
+ships, and then <span 
+class="cmbx-10">order </span>each of the contacted ships to move. The turn ends when all ships finish executing their
+orders.
+<!--l. 27--><p class="indent" >   Different ships may receive different orders. Each ship must be ordered to move into a sector that is strictly
+closer to the target planet than its current sector. (When measuring the distance between sectors, we measure
+the Euclidean distance of their centers.)
+<!--l. 33--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 35--><p class="indent" >   Given are the number of ships <span 
+class="cmmi-10">N</span>, the limit on moves per turn <span 
+class="cmmi-10">K </span>and the initial sectors of all ships. Compute
+which of the two players will win the game if both players play optimally.
+<!--l. 39--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 41--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 44--><p class="indent" >   Each test case starts with a line containing the number of ships <span 
+class="cmmi-10">N </span>and the limit <span 
+class="cmmi-10">K</span>. The <span 
+class="cmmi-10">i</span>-th of the next <span 
+class="cmmi-10">N</span>
+lines contains three integers: the coordinates of the sector where the <span 
+class="cmmi-10">i</span>-th ship starts.
+<!--l. 49--><p class="indent" >   In the easy input you may assume that the coordinates are small and that in each test case either <span 
+class="cmmi-10">K </span>= 1 or
+<span 
+class="cmmi-10">K </span>= <span 
+class="cmmi-10">N</span>.
+<!--l. 52--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 54--><p class="indent" >   For each test case output a single line with the string <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Player</span><span 
+class="cmtt-10">&#x00A0;1</span></span></span> if the first player has a winning strategy and
+the string <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">Player</span><span 
+class="cmtt-10">&#x00A0;2</span></span></span> otherwise.
+<!--l. 58--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+                                                                                       
+
+                                                                                       
+<!--l. 72--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">47</span><span 
+class="cmtt-10">&#x00A0;42</span><span 
+class="cmtt-10">&#x00A0;47</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">2</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">1</span><span 
+class="cmtt-10">&#x00A0;0</span><span 
+class="cmtt-10">&#x00A0;0</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">0</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;0</span>                                 </div>
+</div>
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">Player</span><span 
+class="cmtt-10">&#x00A0;1</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">Player</span><span 
+class="cmtt-10">&#x00A0;2</span>                              </div>
+<!--l. 78--><p class="noindent" >In the first test case the first player can move both
+ships #1 and #3 straight to (0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>0). If he does so,
+he wins.
+<!--l. 83--><p class="noindent" >In the second test case the first player must move
+one of the ships to (0<span 
+class="cmmi-10">,</span>0<span 
+class="cmmi-10">,</span>0). The second player then
+moves the other one and wins.</div>
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>
