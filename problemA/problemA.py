@@ -75,13 +75,15 @@ def parseInputFile(afile):
     """
     lists = [] # list of lists to return
 
-    numCases = int(afile.readline()) # cases to read in
-    for i in range(numCases):
+    numLists = int(afile.readline()) # lists to read in
+    print 'Got numLists:', numLists
+    for i in range(numLists):
+        afile.readline() # empty line
         afile.readline() # empty line
         alist = [int(c) for c in afile.readline().split()]
-        cases.append( alist ) #append a tuple
-    # return a list of cases
-    return cases
+        lists.append( alist ) #append a tuple
+    # return a list of lists
+    return lists
 
 if __name__ == "__main__":
     # figure out what file to read from
