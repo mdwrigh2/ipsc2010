@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta name="description" content="Internet Problem Solving Contest (IPSC) is an online programming contest for teams up three people.">
+  <meta name="keywords" content="IPSC, programming, contest, online contest">
+  <title>IPSC 2010 -  Problem&nbsp;H - Hash</title>
+  <LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+<div class="title">
+<div class="ipscimg">
+<a href="http://ipsc.ksp.sk/index.php"><img src="ipsc.gif"
+alt="IPSC Logo"></a>
+</div>
+<div class="nadpis">
+<h1>Internet Problem Solving Contest</h1>
+<h2>IPSC 2010<br> Problem&nbsp;H - Hash</h2>
+</div>
+</div>
+<div class="telo">
+<ul>
+<li>This problem has no input</li>
+<li><a href="H_tester.cpp">Testing program in C++</a></li><li><a href="H_md5.h">Header file for the C++ program</a></li><li><a href="H_tester.java">Testing program in Java</a></li><li><a href="H_xor-hash.hexdump">Example output for XOR-HASH</a></li><li><a href="H_add-hash.hexdump">Example output for ADD-HASH</a></li></ul>
+<!--l. 5--><p class="indent" >   When dealing with large files, hashing is a nice way how to reduce the file into a small <span 
+class="cmti-10">fingerprint </span>&#8211; a short
+string that somehow represents the contents of the entire file.
+<!--l. 9--><p class="indent" >   Hashing has multiple uses, for example it gives us a nice integrity check when transfering the file. It is also
+used in most digital signatures &#8211; as signing is usually slower than hashing, you first hash the file, and then sign
+the fingerprint.
+<!--l. 16--><p class="indent" >   Most of the hash functions have the property that even if just one byte of the file changes, we have to process
+the entire file again in order to find the new hash value.
+<!--l. 20--><p class="indent" >   In this task we investigate some options how to design a hash function that would allow us to
+update the hash value quickly after we make a change to the hashed file. We will use the following
+approach:
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x1-3x1">We split the file into blocks <span 
+class="cmmi-10">w</span><sub><span 
+class="cmr-7">1</span></sub><span 
+class="cmmi-10">,</span><span 
+class="cmmi-10">&hellip;</span><span 
+class="cmmi-10">,w</span><sub><span 
+class="cmmi-7">n</span></sub> of size 256 bytes (for simplicity we will assume that the length
+     of the file is divisible by 256).
+     </li>
+     <li 
+  class="enumerate" id="x1-5x2">We calculate the hash of each block: <span 
+class="cmmi-10">H</span><sub><span 
+class="cmmi-7">i</span></sub> = <span 
+class="cmmi-10">H</span>(<span 
+class="cmmi-10">w</span><sub><span 
+class="cmmi-7">i</span></sub>), where <span 
+class="cmmi-10">H </span>is some cryptographic hash function
+     whose output is <span 
+class="cmmi-10">m </span>bits long. We will use the well-known MD5 hash function with <span 
+class="cmmi-10">m </span>= 128 bits.
+     </li>
+     <li 
+  class="enumerate" id="x1-7x3">We merge the block hashes together. This can be done in two simple ways. We can either use bitwise
+     xor (so the final hash would be <span 
+class="cmmi-10">X </span>= <span 
+class="cmmi-10">H</span><sub><span 
+class="cmr-7">1</span></sub> <span 
+class="cmsy-10">&oplus; </span><span 
+class="cmmi-10">H</span><sub><span 
+class="cmr-7">2</span></sub> <span 
+class="cmsy-10">&oplus;</span><img 
+src="H0x.png" alt="&sdot;&sdot;&sdot;"  class="@cdots" ><span 
+class="cmsy-10">&oplus; </span><span 
+class="cmmi-10">H</span><sub><span 
+class="cmmi-7">n</span></sub>), or we can add the individual hashes as
+     numbers, computing modulo 2<sup><span 
+class="cmmi-7">m</span></sup> (so the final hash would be <span 
+class="cmmi-10">A </span>= (<span 
+class="cmmi-10">H</span><sub><span 
+class="cmr-7">1</span></sub> + <span 
+class="cmmi-10">H</span><sub><span 
+class="cmr-7">2</span></sub> + <img 
+src="H1x.png" alt="&sdot;&sdot;&sdot;"  class="@cdots" > + <span 
+class="cmmi-10">H</span><sub><span 
+class="cmmi-7">n</span></sub>) mod 2<sup><span 
+class="cmmi-7">m</span></sup>).
+     We will call the two approaches XOR-HASH and ADD-HASH, respectively.</li></ol>
+<!--l. 39--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 41--><p class="indent" >   Invert the hash functions described in the problem statement. That is, both for XOR-HASH and for
+ADD-HASH you should provide a file with a prescribed hash value.
+<!--l. 44--><p class="indent" >   Note that while there are known attacks to find collisions in MD5, so far it is not known how to invert this
+function efficiently.
+<!--l. 47--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 49--><p class="indent" >   You are given a sample implementation of the MD5 hash function along with a testing program and example
+output files for a team with TIS 12345678901234567890.
+<!--l. 52--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 54--><p class="indent" >   As the output for the <span 
+class="cmbx-10">easy </span>data set H1, output the hex dump of a file which has <span 
+class="cmmi-10">n </span>= 256 blocks (i.e., its size
+is 65536 bytes). After calculating the XOR-HASH of this file, the hexadecimal notation of the result must be
+<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">00000</span><span 
+class="cmtt-10">&#x00A0;00000</span><span 
+class="cmtt-10">&#x00A0;00XXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XX</span></span></span>, where the string of 20 <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">X</span></span></span>s should be replaced by your
+TIS.
+<!--l. 61--><p class="indent" >   As the output for the <span 
+class="cmbx-10">hard </span>data set H2, output the hex dump of a file which has <span 
+class="cmmi-10">n </span>= 128 blocks (i.e., its size
+is 32768 bytes). The ADD-HASH of this file must be <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">00000</span><span 
+class="cmtt-10">&#x00A0;00000</span><span 
+class="cmtt-10">&#x00A0;00XXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XXXXX</span><span 
+class="cmtt-10">&#x00A0;XX</span></span></span>, where the
+string of 20 <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">X</span></span></span>s should be replaced by your TIS.
+                                                                                       
+
+                                                                                       
+<!--l. 69--><p class="indent" >   The hex dump of a <span 
+class="cmmi-10">B</span>-byte file should consist of <span 
+class="cmmi-10">B </span>pairs of hexadecimal digits separated by any whitespace.
+For example, if the first three bytes of your file have ASCII values 97, 32, 10, the hex dump of this file would
+start &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">61</span><span 
+class="cmtt-10">&#x00A0;20</span><span 
+class="cmtt-10">&#x00A0;0a</span></span></span>&#8221;.
+<!--l. 75--><p class="indent" >   Instead of the provided MD5 implementation, you should be able to use any software that computes MD5
+hashes of files. If your operating system contains the <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">od</span></span></span> application (octal dump, a part of GNU coreutils), you
+can easily create the hex dump of a file using the command <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">od</span><span 
+class="cmtt-10">&#x00A0;-v</span><span 
+class="cmtt-10">&#x00A0;-A</span><span 
+class="cmtt-10">&#x00A0;n</span><span 
+class="cmtt-10">&#x00A0;-t</span><span 
+class="cmtt-10">&#x00A0;x1</span></span></span>.
+                                                                                       
+
+                                                                                       
+    
+</div>
+
+</body>
+</html>
